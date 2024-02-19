@@ -1,0 +1,15 @@
+CC = gcc
+
+
+mainv2: mainq6v2.o q6funcv2.o
+	gcc -o main  mainq6v2.o q6funcv2.o
+
+main.o : mainq6v2.c  q6.h q6funcv2.c
+
+q6func.o : q6funcv2.c q6v2.h
+
+run : mainv2
+	./mainv2
+	
+clean :
+	$(RM) *.o ./mainv2
